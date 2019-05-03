@@ -22,10 +22,13 @@
         <div class="nav-wrapper">
           <%= link_to "みんブロ", root_path, class: "brand-logo" %>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="sass.html">新規登録</a></li>
-            <li><a href="badges.html">ログイン</a></li>
-            <li><a href="collapsible.html">ログアウト</a></li>
-            <li><a href="badges.html">投稿する</a></li>
+            <% if user_signed_in? %>
+              <li><%= "こんにちは#{current_user.name}さん" %></li>
+              <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+            <% else %>
+              <li><%= link_to '新規登録', new_user_registration_path %></li>
+              <li><%= link_to 'ログイン', new_user_session_path %></li>
+            <% end %>
           </ul>
         </div>
       </nav>

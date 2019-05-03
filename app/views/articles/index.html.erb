@@ -10,8 +10,10 @@
                 <p><%= article.body %></p>
               </div>
               <div class="card-action">
-                <%= link_to "EDIT", edit_article_path(article), method: :get %>
-                <%= link_to "DELETE", "/articles/#{article.id}", method: :delete %>
+                <% if user_signed_in? && current_user.id == article.user_id %>
+                  <%= link_to "EDIT", edit_article_path(article), method: :get %>
+                  <%= link_to "DELETE", "/articles/#{article.id}", method: :delete %>
+                <% end %>
               </div>
             </div>
           </div>
@@ -21,10 +23,12 @@
   <% end %>
 </ul>
 
-<%= link_to new_article_path, method: :get do %>
-  <div class="fixed-action-btn">
-    <div class="btn-floating btn-large red">
-      <i class="material-icons">create</i>
+<% if user_signed_in? %>
+  <%= link_to new_article_path, method: :get do %>
+    <div class="fixed-action-btn">
+      <div class="btn-floating btn-large red">
+        <i class="material-icons">create</i>
+      </div>
     </div>
-  </div>
+  <% end %>
 <% end %>

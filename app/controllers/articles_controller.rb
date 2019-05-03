@@ -1,7 +1,8 @@
 class ArticlesController < ApplicationController
-  # before_action :current_article, only: [:edit, :update, :destroy]
+  # before_action :set_current_article, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
-  def current_article
+  def set_current_article
     @article = Article.find(params[:id])
   end
 
@@ -18,7 +19,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(article_params)
+    @article = current_user.articles.new(article_params)
     if @article.save
       flash[:notice] = "記事を投稿しました"
       redirect_to root_path
@@ -29,17 +30,17 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    current_article
+    set_current_article
   end
 
   def update
-    current_article
+    set_current_article
     @article.update(article_params)
     redirect_to root_path, notice: "記事を更新しました"
   end
 
   def destroy
-    current_article
+    set_current_article
     @article.destroy
     redirect_to root_path notice: "記事を削除しました"
   end
@@ -49,4 +50,8 @@ class ArticlesController < ApplicationController
     # params.permit(:title, :body)
     params.require(:article).permit(:title, :body)
   end
+
+  # def move_to_index
+  #   redirect_to root_path unless user_signed_in?
+  # end
 end
