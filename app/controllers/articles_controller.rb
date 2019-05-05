@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
   end
 
   def index
-    @articles = Article.all.order(updated_at: :desc)
+    @articles = Article.includes(:user).order(updated_at: :desc).page(params[:page]).per(5)
   end
 
   def show

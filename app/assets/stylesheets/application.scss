@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+ .header-message {
+  text-align: center;
+}
+
+.selected {
+  border-bottom: solid 3px #ee6e73;
+}
