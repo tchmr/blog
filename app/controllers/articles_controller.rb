@@ -36,13 +36,15 @@ class ArticlesController < ApplicationController
   def update
     set_current_article
     @article.update(article_params)
-    redirect_to root_path, notice: "記事を更新しました"
+    redirect_to root_path
+    flash[:notice] = "記事を更新しました"
   end
 
   def destroy
     set_current_article
     @article.destroy
-    redirect_to root_path notice: "記事を削除しました"
+    redirect_to root_path
+    flash[:notice] = "記事を削除しました"
   end
 
   private

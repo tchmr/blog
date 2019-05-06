@@ -16,35 +16,7 @@
 <ul>
   <% @favorites.each do |favorite| %>
     <% article = Article.find(favorite.article_id) %>
-    <li>
-      <div class="container">
-        <div class="row">
-          <div class="col s12 m8 offset-m2">
-            <%= link_to "/articles/#{article.id}" do %>
-              <div class="card teal lighten-2">
-                <div class="card-content white-text">
-                  <span class="card-title"><%= article.title %></span>
-                </div>
-                <div class="card-action white">
-                  <% if user_signed_in? && current_user.id == article.user_id %>
-                    <%= link_to "EDIT", edit_article_path(article), method: :get %>
-                    <%= link_to "DELETE", "/articles/#{article.id}", method: :delete %>
-                  <% end %>
-                  <%= link_to "投稿者：#{article.user.name}", "/users/#{article.user.id}" %>
-                  <% if user_signed_in? %>
-                    <% if Favorite.find_by(user_id: current_user.id, article_id: article.id) %>
-                      <%= link_to "お気に入り削除", "/articles/#{article.id}/favorites/#{Favorite.find_by(user_id: current_user.id, article_id: article.id).id}", method: :delete %>
-                    <% else %>
-                      <%= link_to "お気に入り登録", "/articles/#{article.id}/favorites", method: :post %>
-                    <% end %>
-                  <% end %>
-                </div>
-              </div>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </li>
+    <%= render partial: 'layouts/collection', locals: { article: article } %>
   <% end %>
 </ul>
 

@@ -7,6 +7,8 @@ class UsersController < ApplicationController
   def favorites
     @user = User.find(params[:id])
     @favorites = @user.favorites
+    # @articles = @user.favorites.article
+
     # @favorites = Favorite.find_by(user_id: @user.id)
   end
 end

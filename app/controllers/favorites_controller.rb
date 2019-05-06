@@ -8,11 +8,15 @@ class FavoritesController < ApplicationController
   def create
     Favorite.create(user_id: current_user.id, article_id: params[:article_id])
     redirect_to root_path
+    # render controller: :articles, action: :index
+    # render template: "articles/index"
   end
 
   def destroy
     @favorite = Favorite.find_by(user_id: current_user.id, article_id: params[:article_id])
     @favorite.destroy
     redirect_to root_path
+    # render controller: :articles, action: :index
+    # render template: "articles/index"
   end
 end
