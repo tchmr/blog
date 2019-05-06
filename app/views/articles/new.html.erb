@@ -1,0 +1,6 @@
+  <%= form_for @article do |f| %>
+    <%= f.text_field :title, placeholder: "タイトル", value: "" %>
+    <%= f.text_area :body, placeholder: "本文", size: "40x40" %>
+    <%= f.submit value: "投稿する", class: "btn waves-effect waves-light" %>
+  <% end %>
+
