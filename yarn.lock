@@ -685,6 +685,13 @@
   resolved "https://registry.yarnpkg.com/@rails/actioncable/-/actioncable-6.0.0.tgz#8bff9c902be1531ef7a9e191562e9771efcfdfe1"
   integrity sha512-DieouotYHpI6k2EGTCnh1eMvD3W8p3zqjWXEYj4z0khJ+A0qQ5tHxihjTEkio54MVwqHt1DcpUm2woh2n/alCA==
 
+"@rails/actiontext@^6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@rails/actiontext/-/actiontext-6.0.0.tgz#ee7f70e916c6d7c4ff2e0832047b9c1c2dff0f62"
+  integrity sha512-0Koqw59xIMYMMri3ZIE1CaEEEkMQi16j+4FQwCRE5QG830Q1tnli0TrQrtJ0vE+D1vf1JuJfy7UHSGPbaspmRQ==
+  dependencies:
+    "@rails/activestorage" "^6.0.0-alpha"
+
 "@rails/activestorage@^6.0.0-alpha":
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/@rails/activestorage/-/activestorage-6.0.0.tgz#6d9cc98f3dcf195c38ca65e80acd2e759336dd7a"
@@ -5642,6 +5649,11 @@ querystringify@^2.1.1:
   resolved "https://registry.yarnpkg.com/querystringify/-/querystringify-2.1.1.tgz#60e5a5fd64a7f8bfa4d2ab2ed6fdf4c85bad154e"
   integrity sha512-w7fLxIRCRT7U8Qu53jQnJyPkYZIaR4n5151KMfcJlO/A9397Wxb1amJvROTK6TOnp7PfoAmg/qXiNHI+08jRfA==
 
+rails-ujs@^5.2.3:
+  version "5.2.3"
+  resolved "https://registry.yarnpkg.com/rails-ujs/-/rails-ujs-5.2.3.tgz#4b65ea781a6befe62e96da6362165286a1fe4099"
+  integrity sha512-rYgj185MowWFBJI1wdac2FkX4yFYe4+3jJPlB+CTY7a4rmIyg0TqE4vYZmSBBesp7blPUa57oqKzwQjN7eVbEQ==
+
 randombytes@^2.0.0, randombytes@^2.0.1, randombytes@^2.0.5:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/randombytes/-/randombytes-2.1.0.tgz#df6f84372f0270dc65cdf6291349ab7a473d4f2a"
@@ -6705,6 +6717,11 @@ trim-right@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/trim-right/-/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
   integrity sha1-yy4SAwZ+DI3h9hQJS5/kVwTqYAM=
+
+trix@^1.0.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/trix/-/trix-1.2.0.tgz#b314101abd1d8d3d5da22ae5b866a719a73a6e21"
+  integrity sha512-gJ7edoWzcnc9DBjsgeGkmotVpyVhFQTlSOmUYjwFn71NlGixAhNgsu8pVIq/jkIkbk6om0PSetc9cRJm+qU3+A==
 
 "true-case-path@^1.0.2":
   version "1.0.3"
