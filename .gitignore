@@ -25,3 +25,5 @@ public/uploads/*
 yarn-debug.log*
 .yarn-integrity
 /storage/*
+
+.DS_Store
